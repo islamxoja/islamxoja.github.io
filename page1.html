@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link href="styles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order</title>
+  <script src="home.js"></script>
+</head>
+
+<body>
+  <nav class="center">
+    <a id="nav" href="index.html">Home</a>
+    <a id="nav" href="page2.html">About Us</a>
+    <a id="nav" href="page1.html">Order</a>
+    <a id="nav" href="page3.html">Contact</a>
+  </nav> <br>
+  <div style="overflow-x: auto;">
+    <table class="table table-sm; center">
+      <caption>PRICES</caption>
+      <tr>
+        <th>Cofee name</th>
+        <th>Description</th>
+        <th>Intensity</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Black</td>
+        <td>Just cofee</td>
+        <td>100%</td>
+        <td>10$</td>
+      </tr>
+      <tr>
+        <td>Americano</td>
+        <td>Espresso, hot water</td>
+        <td>50%</td>
+        <td>12$</td>
+      </tr>
+      <tr>
+        <td>Latte</td>
+        <td>Espresso, steamed milk</td>
+        <td>25%</td>
+        <td>14$</td>
+      </tr>
+      <tr>
+        <td>Cappucino</td>
+        <td>Espresso, steamed milk, foam</td>
+        <td>25%</td>
+        <td>14$</td>
+      </tr>
+      <tr>
+        <td>Macchiato</td>
+        <td>Espresso shot, Foam</td>
+        <td>40%</td>
+        <td>14$</td>
+      </tr>
+      <tr>
+        <td>Mocha</td>
+        <td>Espresso, Chocolate, Steamed milk</td>
+        <td>35%</td>
+        <td>16$</td>
+      </tr>
+      <tr>
+        <td>Affogato</td>
+        <td>Espresso, ice cream</td>
+        <td>35%</td>
+        <td>16$</td>
+      </tr>
+      <tr>
+        <td>Espresso</td>
+        <td>1 oz Espresso</td>
+        <td>60%</td>
+        <td>12$</td>
+      </tr>
+      <tr>
+        <td>Flat White</td>
+        <td>Espresso, Steamed milk</td>
+        <td>45%</td>
+        <td>13$</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <P class="center">Please order a cofee</P>
+    <form action="#" class="center" id="form1">
+      <label for="fname1">First name:</label><br>
+      <input type="text" id="fname1" name="fname1" value=""><br>
+      <label for="lname1">Last name:</label><br>
+      <input type="text" id="lname1" name="lname1" value=""><br>
+      <label for="adress1">Adress:</label><br>
+      <input type="text" id="adress1" name="adress1" value=""><br>
+      <label for="cofee">Cofee name:</label><br>
+      <input type="text1" id="cofee1" name="cofee1" value=""><br><br>
+
+      <div><input type="radio" id="ar" name="ctype" value="arabica">
+        <label for="arabica">Arabica</label>
+
+        <input type="radio" id="rb" name="ctype" value="robusta">
+        <label for="robusta">Robusta</label>
+
+        <input type="radio" id="lb" name="ctype" value="liberica">
+        <label for="liberica">Liberica</label><br>
+        <input type="button" value="Order" onclick="myFunction(); myReset(); myOrder()">
+        <p id="order"></p>
+
+      </div>
+    </form>
+  </div>
+
+
+</body>
+
+</html>
