@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %} Modify {%endblock%}
+
+    {% block main %}
+    <div>
+        {% for i in dic %}
+        <form action="/modify" method="POST">
+            <input type="text" autocomplete="off" name="tm" value="{{i.tm}}">
+            <input type="text" autocomplete="off" name="fr" value="{{i.fr}}">
+            <input type="text" autocomplete="off" name="ru" value="{{i.ru}}">
+            <input type="hidden" name="id2" value="{{i.id}}">
+            <input type="submit" value="Sumbit changes">
+        </form>
+        {% endfor %}
+    </div>
+    <div>
+        {% for i in prelimdic %}
+        <form action="/modify" method="POST">
+            <input type="text" autocomplete="off" name="tmpr" value="{{i.tm}}">
+            <input type="text" autocomplete="off" name="frpr" value="{{i.fr}}">
+            <input type="text" autocomplete="off" name="rupr" value="{{i.ru}}">
+            <input type="hidden" name="idprelim2" value="{{i.id}}">
+            <input type="submit" value="Sumbit changes">
+        </form>
+        {% endfor %}
+    </div>
+        
+    
+    
+
+    {%endblock%}

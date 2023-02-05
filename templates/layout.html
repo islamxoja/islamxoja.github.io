@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>PoleTrad: {% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <style>
+            nav{
+                background-color: coral !important;
+                text-decoration: solid !important;
+                color: black !important;
+                /* text-align: center !important; */
+            }
+            tr:hover {background-color: rgb(252, 252, 124) !important;} 
+        </style>
+        <link rel="stylesheet" href="static/styless.css">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-right navbar-fixed-top">
+            <div class="container-fluid">
+                
+                <ul class="nav navbar-nav">
+                    <li> <a href="/" >Archive Search</a> </li>
+                    <li> <a href="/online">Online Search</a> </li>
+                    <!-- <li> <a href="/templates">Templates</a> </li> -->
+                    <li> <a href="/input">Data Entry</a> </li>
+                    <li> <a href="/upload">Upload</a> </li>
+                    <!-- <li> <a href="/modify">Modify</a> </li> -->
+                </ul>
+            </div>
+        </nav> 
+        <br><br><br><br>
+        <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
+        
+       
+        </main>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{%extends "layout.html"%}
+{% block title %} Input Data {%endblock%}
+
+{%block main %}
+    <div class="form-group">
+        <form action="/input" method="post" name="form">
+            <input type="hidden" name="id">
+            <input type="text" autocomplete="off" autofocus placeholder="Turkmen version" name="tm">
+            <input type="text" autocomplete="off" autofocus placeholder="French version" name="fr">
+            <input type="text" autocomplete="off" autofocus placeholder="Russian version" name="ru">
+            <button class="" type="submit">Insert</button>
+        </form>
+    </div>
+    <p><b>LAST ENTRY</b></p>
+
+    <table class="table table-stripped table-hover table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Turkmen version</th>
+                <th>French version</th>
+                <th>Russian version</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{tm}}</td>
+                <td>{{fr}}</td>
+                <td>{{ru}}</td>
+            </tr>
+        </tbody>
+    </table>
+{%endblock%}

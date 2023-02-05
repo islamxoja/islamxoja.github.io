@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %} Archive Search {%endblock%}
+
+    {% block main %}
+        <div class="form-group row">
+            <div class="col-xs-4">
+                <label for="ex3">Search</label>
+                <input class="form-control" id="ex3" autocomplete="off" autofocus placeholder="Search" type="text">
+            </div>
+        </div>
+        
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-blakc-90" scope="col">Turkmen</th>
+                        <th scope="col">French</th>
+                        <th scope="col">Russian</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody id="trans" class="table-group-divider">
+                </tbody>
+            </table>
+
+        <script>
+            let input = document.querySelector('input');
+            input.addEventListener('input', async function() {
+                let response = await fetch('/search?q=' + input.value);
+                let dics = await response.json();
+                
+                let htmlAll = '';
+                
+                for (let item in dics) {
+                    var no = dics[item].id;                    
+                    let tm = dics[item].tm.replace('<', '&lt;').replace('&', '&amp;');
+                    let fr = dics[item].fr.replace('<', '&lt;').replace('&', '&amp;');
+                    let ru = dics[item].ru.replace('<', '&lt;').replace('&', '&amp;');
+                                        
+                    htmlAll += '<tr><td>' + tm + '</td><td>' + fr + '</td><td>'
+                         + ru + '</td><td><form action="/delete" method="POST"><input name="id" type="hidden" value=' 
+                            + no + '><input type="submit" value="Delete"></form><form action="/modify" method="POST"><input name="id" type="hidden" value=' 
+                            + no + '><input type="submit" value="Modify"></form></td></tr>';
+                }
+                document.getElementById('trans').innerHTML = htmlAll;
+                
+                let value = input.value;
+                if (value.length > 1) {
+                    let regex = new RegExp(value, 'ig');
+                    let td = document.getElementById('trans').innerHTML
+                    let result = td.replace(regex, '<b><mark><code>' + value + '</code></mark></b>');
+                    document.getElementById('trans').innerHTML = result;
+                }
+                else {
+                    return false
+                }
+            });
+        </script>
+{%endblock%}
